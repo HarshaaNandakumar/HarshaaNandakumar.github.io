@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshaa Nandakumar — Supply Chain Analytics</title>
+  <meta name="description" content="Portfolio of Harshaa Nandakumar — Supply Chain Analyst and Business Development professional. Power BI, SQL, Python, VBA automation, freight forwarding domain expertise." />
+
+  <!-- Favicon (inline amber dot) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23B57E2E'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       DESIGN TOKENS
+       ========================================================= */
+    :root {
+      --ink:     #161217;
+      --ink-80:  #2A242C;
+      --muted:   #6A6259;
+      --cream:   #F7F2E9;
+      --paper:   #FDFAF4;
+      --rule:    #E4DBC8;
+      --amber:   #B57E2E;
+      --amber-2: #8B5E1E;
+      --teal:    #1F4947;
+
+      --font-display: 'Fraunces', 'Times New Roman', serif;
+      --font-body:    'Outfit', -apple-system, system-ui, sans-serif;
+      --font-mono:    'JetBrains Mono', 'Menlo', monospace;
+
+      --page-pad-x: clamp(1.25rem, 4vw, 4rem);
+      --max-w: 1280px;
+    }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.55;
+      font-weight: 400;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      /* Faint paper texture via layered gradients */
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(181,126,46,0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(31,73,71,0.03) 0%, transparent 45%);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* =========================================================
+       MASTHEAD
+       ========================================================= */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 0.9rem var(--page-pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .masthead .brand {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .masthead .brand::before {
+      content: "●";
+      color: var(--amber);
+      margin-right: 0.5rem;
+    }
+    .masthead nav a {
+      margin-left: 1.4rem;
+      transition: color 0.2s;
+    }
+    .masthead nav a:hover { color: var(--amber); }
+    @media (max-width: 640px) {
+      .masthead nav { display: none; }
+    }
+
+    /* =========================================================
+       LAYOUT
+       ========================================================= */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--page-pad-x);
+    }
+    section {
+      padding: clamp(3rem, 8vw, 6.5rem) 0;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber-2);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .section-label::before {
+      content: "";
+      width: 1.5rem;
+      height: 1px;
+      background: var(--amber-2);
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero {
+      padding-top: clamp(3rem, 10vw, 7rem);
+      padding-bottom: clamp(2rem, 6vw, 5rem);
+      position: relative;
+    }
+    .hero .meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(3rem, 11vw, 8.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem 0;
+      color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--amber-2);
+    }
+    .hero .tagline {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+      color: var(--ink-80);
+      max-width: 38ch;
+      line-height: 1.4;
+      margin: 0 0 2.5rem 0;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--cream);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--amber); border-color: var(--amber); color: var(--cream); }
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn.ghost:hover { background: var(--ink); color: var(--cream); }
+
+    /* Hero decorative element — a subtle index/coordinates pattern */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      background-image:
+        linear-gradient(var(--rule) 1px, transparent 1px),
+        linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       CONTENTS / INDEX
+       ========================================================= */
+    .contents {
+      padding-top: clamp(2rem, 5vw, 4rem);
+    }
+    .contents-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .contents-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--rule);
+      gap: 1rem;
+    }
+    .contents-list .idx {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--amber-2);
+      letter-spacing: 0.1em;
+      min-width: 3rem;
+    }
+    .contents-list .title {
+      flex: 1;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .contents-list li:hover .title { color: var(--amber-2); }
+    .contents-list .pg {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    .about-lead {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      line-height: 1.4;
+      color: var(--ink);
+      margin: 0 0 1.8rem 0;
+    }
+    .about-lead::first-letter {
+      font-family: var(--font-display);
+      font-size: 3.5em;
+      font-weight: 400;
+      float: left;
+      line-height: 0.9;
+      margin: 0.05em 0.08em 0 0;
+      color: var(--amber);
+    }
+    .about-body p {
+      font-size: 1rem;
+      color: var(--ink-80);
+      margin: 0 0 1.2rem 0;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    /* Stat Strip */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: 1fr; gap: 1.8rem; }
+    }
+    .stat {
+      position: relative;
+    }
+    .stat .num {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--amber);
+      letter-spacing: -0.02em;
+    }
+    .stat .label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 0.6rem;
+      max-width: 22ch;
+    }
+
+    /* =========================================================
+       WORK / PROJECTS
+       ========================================================= */
+    .work-intro {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+      color: var(--ink-80);
+      max-width: 55ch;
+      margin: 0 0 3rem 0;
+      line-height: 1.45;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: 6rem 1fr auto;
+      gap: 2rem;
+      padding: 2.2rem 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+      transition: padding 0.25s;
+    }
+    .project:last-child { border-bottom: 1px solid var(--rule); }
+    .project:hover {
+      padding-left: 0.75rem;
+    }
+    @media (max-width: 700px) {
+      .project {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+    }
+    .project-num {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--amber-2);
+      padding-top: 0.5rem;
+    }
+    .project-main h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      margin: 0 0 0.6rem 0;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .project-main h3 a {
+      transition: color 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .project-main h3 a:hover {
+      color: var(--amber-2);
+      border-bottom-color: var(--amber-2);
+    }
+    .project-main .desc {
+      font-size: 1rem;
+      color: var(--ink-80);
+      margin: 0 0 1rem 0;
+      max-width: 65ch;
+    }
+    .project-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+    }
+    .project-status {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding-top: 0.5rem;
+      white-space: nowrap;
+    }
+    .project-status.live {
+      color: var(--teal);
+    }
+    .project-status.live::before {
+      content: "●";
+      margin-right: 0.4rem;
+    }
+    .project-status.dev {
+      color: var(--amber-2);
+    }
+    .project-status.dev::before {
+      content: "○";
+      margin-right: 0.4rem;
+    }
+
+    /* =========================================================
+       CAPABILITIES
+       ========================================================= */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .cap-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .cap-grid { grid-template-columns: 1fr; }
+    }
+    .cap h4 {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber-2);
+      margin: 0 0 0.9rem 0;
+      font-weight: 500;
+    }
+    .cap ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cap li {
+      font-size: 0.95rem;
+      color: var(--ink-80);
+      padding: 0.4rem 0;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .cap li:last-child { border-bottom: none; }
+
+    /* =========================================================
+       EXPERIENCE
+       ========================================================= */
+    .exp-row {
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+      gap: 2rem;
+      padding: 1.8rem 0;
+      border-top: 1px solid var(--rule);
+      align-items: start;
+    }
+    .exp-row:last-child { border-bottom: 1px solid var(--rule); }
+    @media (max-width: 700px) {
+      .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+    .exp-date {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding-top: 0.3rem;
+    }
+    .exp-body h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin: 0 0 0.3rem 0;
+      color: var(--ink);
+    }
+    .exp-body .company {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--amber-2);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.8rem;
+    }
+    .exp-body p {
+      font-size: 0.95rem;
+      color: var(--ink-80);
+      margin: 0;
+      max-width: 62ch;
+    }
+
+    /* =========================================================
+       EDUCATION
+       ========================================================= */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+    @media (max-width: 800px) {
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+    .edu-item {
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .edu-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: 0 0 0.3rem 0;
+    }
+    .edu-item .program {
+      font-size: 0.92rem;
+      color: var(--ink-80);
+      margin-bottom: 0.4rem;
+    }
+    .edu-item .year {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cert-list li {
+      padding: 0.6rem 0;
+      font-size: 0.92rem;
+      color: var(--ink-80);
+      border-bottom: 1px dotted var(--rule);
+    }
+    .cert-list li:last-child { border-bottom: none; }
+
+    /* =========================================================
+       CONTACT / FOOTER
+       ========================================================= */
+    .contact {
+      background: var(--ink);
+      color: var(--cream);
+      padding: clamp(4rem, 9vw, 7rem) var(--page-pad-x);
+      margin-top: 0;
+      border-bottom: none;
+    }
+    .contact-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .contact .section-label {
+      color: var(--amber);
+    }
+    .contact .section-label::before { background: var(--amber); }
+    .contact h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 2.5rem 0;
+      max-width: 18ch;
+    }
+    .contact h2 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      border-top: 1px solid rgba(228,219,200,0.15);
+      padding-top: 2.5rem;
+    }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .contact-item .label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: rgba(247,242,233,0.5);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .contact-item a {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--cream);
+      transition: color 0.2s;
+      border-bottom: 1px solid transparent;
+    }
+    .contact-item a:hover {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+    }
+
+    .colophon {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 2rem var(--page-pad-x);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(247,242,233,0.4);
+      background: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(228,219,200,0.1);
+    }
+
+    /* =========================================================
+       REVEAL (progressive enhancement — JS only)
+       ========================================================= */
+    html.js .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    html.js .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html.js .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═════════════════════════════════════════════════════════
+       MASTHEAD
+       ═════════════════════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="brand">HN / Portfolio</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════════════════ -->
+    <section class="hero reveal">
+      <div class="meta">
+        <span>Vol. 01 · 2026</span>
+        <span>Chennai, IN · 13.08°N 80.27°E</span>
+      </div>
+      <h1>Harshaa<br/><em>Nandakumar.</em></h1>
+      <p class="tagline">
+        Supply chain analytics. Business development.<br/>
+        Turning complex logistics data into clear, actionable strategy.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#work">View Work →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/harshaanandakumar/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         CONTENTS
+         ═══════════════════════════════════════════════════════ -->
+    <section class="contents reveal" aria-label="Contents">
+      <div class="section-label">Contents</div>
+      <ul class="contents-list">
+        <li><a href="#about" style="display:contents;"><span class="idx">01</span><span class="title">About</span><span class="pg">↓</span></a></li>
+        <li><a href="#work" style="display:contents;"><span class="idx">02</span><span class="title">Selected Work</span><span class="pg">↓</span></a></li>
+        <li><a href="#capabilities" style="display:contents;"><span class="idx">03</span><span class="title">Capabilities</span><span class="pg">↓</span></a></li>
+        <li><a href="#experience" style="display:contents;"><span class="idx">04</span><span class="title">Experience</span><span class="pg">↓</span></a></li>
+        <li><a href="#education" style="display:contents;"><span class="idx">05</span><span class="title">Education & Credentials</span><span class="pg">↓</span></a></li>
+        <li><a href="#contact" style="display:contents;"><span class="idx">06</span><span class="title">Contact</span><span class="pg">↓</span></a></li>
+      </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         01 · ABOUT
+         ═══════════════════════════════════════════════════════ -->
+    <section id="about" class="reveal">
+      <div class="section-label">01 · About</div>
+      <div class="about-grid">
+        <p class="about-lead">
+          I sit where commercial strategy meets operational data — six years inside global freight forwarding, building the dashboards and automations that turn noisy shipping data into decisions leadership can act on.
+        </p>
+        <div class="about-body">
+          <p>
+            Most recently at EUSU Logistics as Strategic Account & Analytics Manager, and four years before that at Expeditors in district sales and operations. My approach combines technical rigor — SQL-based transformations, Power BI data modeling, VBA workflows — with a commercial mindset shaped by years of owning client relationships and revenue targets.
+          </p>
+          <p>
+            Currently deepening the technical foundation with <strong>MIT's MicroMasters in Supply Chain Management</strong>, focused on the intersection of advanced analytics and global logistics strategy. Open to Supply Chain Analyst and BI Analyst roles.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">6<sup style="font-size:0.55em; color: var(--amber-2);">yrs</sup></div>
+          <div class="label">Inside global freight forwarding & business development</div>
+        </div>
+        <div class="stat">
+          <div class="num">2.5<span style="font-size:0.6em;">×</span></div>
+          <div class="label">Monthly net revenue growth on managed accounts</div>
+        </div>
+        <div class="stat">
+          <div class="num">IIM<span style="font-size:0.5em;"> / MIT</span></div>
+          <div class="label">Business analytics &amp; supply chain management</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         02 · SELECTED WORK
+         ═══════════════════════════════════════════════════════ -->
+    <section id="work" class="reveal">
+      <div class="section-label">02 · Selected Work</div>
+      <p class="work-intro">
+        Six projects spanning automation, dashboard design, service-level analysis, and forecasting — each with a problem statement, approach, and measurable outcome.
+      </p>
+
+      <article class="project">
+        <div class="project-num">001</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/freight-quote-automation" target="_blank" rel="noopener">Freight Quote Automation</a></h3>
+          <p class="desc">
+            A multi-mode VBA tool that generates standardized freight quotes across seven modes — sea import/export (FCL/LCL/multi-drop), air import/export, and domestic. Sequential quote IDs, an automatic audit log, and one-click PDF export to cloud storage replace a manual, error-prone workflow.
+          </p>
+          <div class="project-meta">
+            <span class="tag">VBA</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-status live">Case Study</div>
+      </article>
+
+      <article class="project">
+        <div class="project-num">002</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/logistics-ops-excellence" target="_blank" rel="noopener">Logistics Ops Excellence</a></h3>
+          <p class="desc">
+            A connected three-part operational governance system: a 25-field Daily Shipment Report with Incoterms validation, an Account Management phase tracker with status and owner assignments, and a daily team huddle tracker with MoM minutes, desk-level file counts, and monthly rollups.
+          </p>
+          <div class="project-meta">
+            <span class="tag">Excel</span>
+            <span class="tag">Power Query</span>
+            <span class="tag">Process Design</span>
+          </div>
+        </div>
+        <div class="project-status live">Case Study</div>
+      </article>
+
+      <article class="project">
+        <div class="project-num">003</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/freight-pipeline-dashboards" target="_blank" rel="noopener">Freight Pipeline Dashboards</a></h3>
+          <p class="desc">
+            Two Power BI dashboards built for freight forwarding. The Revenue/GP dashboard segments performance by commercial vs non-commercial with per-employee drilldown. The Sales Pipeline dashboard tracks revenue by vertical, lane-wise volume, customer concentration, and a converted / quoted / nominated funnel.
+          </p>
+          <div class="project-meta">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Data Modeling</span>
+          </div>
+        </div>
+        <div class="project-status live">Case Study</div>
+      </article>
+
+      <article class="project">
+        <div class="project-num">004</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/otif-service-level-analysis" target="_blank" rel="noopener">OTIF &amp; Service-Level Analysis</a></h3>
+          <p class="desc">
+            End-to-end service-level analysis on a public FMCG logistics dataset. Computes On-Time %, In-Full %, and OTIF % against per-customer service-level targets, identifies delay root causes by product category and route, and surfaces findings through a Power BI dashboard backed by SQL transformations.
+          </p>
+          <div class="project-meta">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </div>
+        <div class="project-status dev">In Development</div>
+      </article>
+
+      <article class="project">
+        <div class="project-num">005</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/freight-demand-forecasting" target="_blank" rel="noopener">Freight Demand Forecasting</a></h3>
+          <p class="desc">
+            Time-series forecasting on shipment volumes using Prophet and statistical baselines. Includes seasonality decomposition, cross-validated model selection, accuracy metrics (MAPE, sMAPE), and a forecasting dashboard that a demand planner could actually use.
+          </p>
+          <div class="project-meta">
+            <span class="tag">Python</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Prophet</span>
+          </div>
+        </div>
+        <div class="project-status dev">In Development</div>
+      </article>
+
+      <article class="project">
+        <div class="project-num">006</div>
+        <div class="project-main">
+          <h3><a href="https://github.com/HarshaaNandakumar/sql-logistics-reporting" target="_blank" rel="noopener">SQL Logistics Reporting Pack</a></h3>
+          <p class="desc">
+            A curated library of SQL queries covering the reporting scenarios every supply chain analyst encounters: lane performance, customer concentration, shipment aging, rolling revenue, on-time windows, top-N analyses, and cohort-style retention.
+          </p>
+          <div class="project-meta">
+            <span class="tag">SQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Reporting</span>
+          </div>
+        </div>
+        <div class="project-status dev">In Development</div>
+      </article>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         03 · CAPABILITIES
+         ═══════════════════════════════════════════════════════ -->
+    <section id="capabilities" class="reveal">
+      <div class="section-label">03 · Capabilities</div>
+      <div class="cap-grid">
+        <div class="cap">
+          <h4>Analytics &amp; BI</h4>
+          <ul>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>DAX &amp; Data Modeling</li>
+            <li>Salesforce CRM Analytics</li>
+            <li>Advanced Excel</li>
+          </ul>
+        </div>
+        <div class="cap">
+          <h4>Data &amp; Automation</h4>
+          <ul>
+            <li>SQL (PostgreSQL)</li>
+            <li>Python (pandas)</li>
+            <li>VBA</li>
+            <li>Power Query</li>
+            <li>KPI Design</li>
+          </ul>
+        </div>
+        <div class="cap">
+          <h4>Supply Chain</h4>
+          <ul>
+            <li>Ocean &amp; Air Freight</li>
+            <li>Incoterms</li>
+            <li>OTIF / On-Time / In-Full</li>
+            <li>S&amp;OP Fundamentals</li>
+            <li>Pricing &amp; RFP Support</li>
+          </ul>
+        </div>
+        <div class="cap">
+          <h4>Commercial</h4>
+          <ul>
+            <li>Strategic Account Mgmt</li>
+            <li>QBRs &amp; SOPs</li>
+            <li>Retention &amp; Upsell</li>
+            <li>Diagnostic Analytics</li>
+            <li>Stakeholder Partnership</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         04 · EXPERIENCE
+         ═══════════════════════════════════════════════════════ -->
+    <section id="experience" class="reveal">
+      <div class="section-label">04 · Experience</div>
+      <div class="exp-row">
+        <div class="exp-date">2025 —</div>
+        <div class="exp-body">
+          <h4>Strategic Account &amp; Analytics Manager</h4>
+          <div class="company">EUSU Logistics · Chennai</div>
+          <p>Driving client retention and revenue growth through value-added logistics insights, customized dashboards, and a hybrid approach combining account strategy, data intelligence, and cross-functional execution.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2021 — 2025</div>
+        <div class="exp-body">
+          <h4>District Sales Executive · District Sales Operations</h4>
+          <div class="company">Expeditors · Chennai</div>
+          <p>Four years across sales and operations. Identified and engaged prospects, built long-term client relationships through consultative selling, and supported leadership with Z-score credit analysis and weekly performance reports.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2021</div>
+        <div class="exp-body">
+          <h4>Business Development Specialist</h4>
+          <div class="company">Square Yards · Abu Dhabi</div>
+          <p>Consulted clients on real estate investment with customized portfolio recommendations and end-to-end transaction management.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2018 — 2020</div>
+        <div class="exp-body">
+          <h4>Business Development Manager · Key Account Manager</h4>
+          <div class="company">OYO · Coimbatore &amp; Chennai</div>
+          <p>Launched 18 cloud kitchens across the ROTN region, built operational trackers, trained site teams, and managed corporate travel accounts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         05 · EDUCATION
+         ═══════════════════════════════════════════════════════ -->
+    <section id="education" class="reveal">
+      <div class="section-label">05 · Education &amp; Credentials</div>
+      <div class="edu-grid">
+        <div>
+          <div class="edu-item">
+            <h4>Indian Institute of Management, Indore</h4>
+            <div class="program">Integrated Programme in Business Analytics (IPBA)</div>
+            <div class="year">2019 — 2020</div>
+          </div>
+          <div class="edu-item">
+            <h4>MIT Center for Transportation &amp; Logistics</h4>
+            <div class="program">MicroMasters, Supply Chain Management <em style="color:var(--amber-2); font-style:italic;">(in progress)</em></div>
+            <div class="year">Ongoing</div>
+          </div>
+          <div class="edu-item">
+            <h4>Anna Adarsh College for Women</h4>
+            <div class="program">Bachelor of Commerce — Corporate Secretaryship</div>
+            <div class="year">2015 — 2018</div>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-2); font-weight: 500; margin: 0 0 1rem 0;">Certifications &amp; Honours</h4>
+          <ul class="cert-list">
+            <li>Intermediate SQL — Data Reporting &amp; Analysis</li>
+            <li>From Excel to SQL</li>
+            <li>Supply Chain Foundations</li>
+            <li>Lean Six Sigma Foundations</li>
+            <li>Project Management Foundations</li>
+            <li>Salesforce CRM Analytics</li>
+            <li style="padding-top: 1rem; color: var(--amber-2);">Best KAM — Highest NRV Extraction</li>
+            <li style="color: var(--amber-2);">Sales Champion of the Hub</li>
+            <li style="color: var(--amber-2);">Rising Star of the Month · Jul 2020</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       06 · CONTACT
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="contact" class="contact reveal">
+    <div class="contact-inner">
+      <div class="section-label">06 · Contact</div>
+      <h2>Let's <em>build something</em> that moves the needle.</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <a href="mailto:nharshaa18@gmail.com">nharshaa18@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/harshaanandakumar/" target="_blank" rel="noopener">/in/harshaanandakumar</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">GitHub</div>
+          <a href="https://github.com/HarshaaNandakumar" target="_blank" rel="noopener">/HarshaaNandakumar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="colophon">
+    <span>© 2026 Harshaa Nandakumar</span>
+    <span>Set in Fraunces &amp; Outfit · Built for supply chain clarity</span>
+  </div>
+
+  <script>
+    // Progressive enhancement: only enable fade-in reveals if JS + IntersectionObserver both work.
+    // If this fails for any reason, all content remains visible.
+    document.documentElement.classList.add('js');
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
