@@ -295,14 +295,17 @@
     /* Stat Strip */
     .stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       margin-top: 3rem;
       padding-top: 2.5rem;
       border-top: 1px solid var(--rule);
     }
-    @media (max-width: 640px) {
-      .stats { grid-template-columns: 1fr; gap: 1.8rem; }
+    @media (max-width: 900px) {
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 1.8rem; }
+    }
+    @media (max-width: 480px) {
+      .stats { grid-template-columns: 1fr; }
     }
     .stat {
       position: relative;
@@ -720,7 +723,7 @@
 
       <div class="stats">
         <div class="stat">
-          <div class="num">5<sup style="font-size:0.55em; color: var(--amber-2);">yrs</sup></div>
+          <div class="num">7<sup style="font-size:0.55em; color: var(--amber-2);">yrs</sup></div>
           <div class="label">Inside global freight forwarding & business development</div>
         </div>
         <div class="stat">
@@ -728,8 +731,12 @@
           <div class="label">Monthly net revenue growth on managed accounts</div>
         </div>
         <div class="stat">
-          <div class="num">IIM<span style="font-size:0.5em;"> / MIT</span></div>
-          <div class="label">Business analytics &amp; supply chain management</div>
+          <div class="num">IIM</div>
+          <div class="label">Business Analytics</div>
+        </div>
+        <div class="stat">
+          <div class="num">MIT</div>
+          <div class="label">Supply Chain Management</div>
         </div>
       </div>
     </section>
@@ -983,7 +990,8 @@
 
   <div class="colophon">
     <span>© 2026 Harshaa Nandakumar</span>
-    </div>
+    <span>Set in Fraunces &amp; Outfit · Built for supply chain clarity</span>
+  </div>
 
   <script>
     // Progressive enhancement: only enable fade-in reveals if JS + IntersectionObserver both work.
