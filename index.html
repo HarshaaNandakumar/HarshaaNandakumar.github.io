@@ -148,16 +148,20 @@
       font-family: var(--font-display);
       font-weight: 400;
       font-style: normal;
-      font-size: clamp(3rem, 11vw, 8.5rem);
-      line-height: 0.95;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      line-height: 1;
       letter-spacing: -0.03em;
       margin: 0 0 1.5rem 0;
       color: var(--ink);
+      white-space: nowrap;
     }
     .hero h1 em {
       font-style: italic;
       font-weight: 300;
       color: var(--amber-2);
+    }
+    @media (max-width: 720px) {
+      .hero h1 { white-space: normal; }
     }
     .hero .tagline {
       font-family: var(--font-display);
@@ -165,7 +169,7 @@
       font-style: italic;
       font-size: clamp(1.15rem, 2.2vw, 1.6rem);
       color: var(--ink-80);
-      max-width: 38ch;
+      max-width: 70ch;
       line-height: 1.4;
       margin: 0 0 2.5rem 0;
     }
@@ -226,13 +230,13 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      padding: 1.1rem 0;
+      padding: 0.7rem 0;
       border-bottom: 1px solid var(--rule);
       gap: 1rem;
     }
     .contents-list .idx {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.7rem;
       color: var(--amber-2);
       letter-spacing: 0.1em;
       min-width: 3rem;
@@ -241,7 +245,7 @@
       flex: 1;
       font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-size: clamp(1rem, 2vw, 1.35rem);
       color: var(--ink);
       transition: color 0.2s;
     }
@@ -504,45 +508,46 @@
        ========================================================= */
     .edu-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
     }
-    @media (max-width: 800px) {
+    @media (max-width: 1024px) {
+      .edu-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
       .edu-grid { grid-template-columns: 1fr; }
     }
-    .edu-item {
-      margin-bottom: 1.8rem;
-      padding-bottom: 1.8rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .edu-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .edu-item h4 {
       font-family: var(--font-display);
       font-size: 1.2rem;
       font-weight: 400;
-      margin: 0 0 0.3rem 0;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.25;
+      min-height: 3em;
     }
     .edu-item .program {
       font-size: 0.92rem;
       color: var(--ink-80);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
     }
     .edu-item .year {
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--muted);
       letter-spacing: 0.08em;
     }
     .cert-list {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0.5rem 0 0 0;
     }
     .cert-list li {
-      padding: 0.6rem 0;
-      font-size: 0.92rem;
+      padding: 0.4rem 0;
+      font-size: 0.85rem;
       color: var(--ink-80);
       border-bottom: 1px dotted var(--rule);
+      line-height: 1.35;
     }
     .cert-list li:last-child { border-bottom: none; }
 
@@ -669,10 +674,9 @@
         <span>Vol. 01 · 2026</span>
         <span>Chennai, IN · 13.08°N 80.27°E</span>
       </div>
-      <h1>Harshaa<br/><em>Nandakumar.</em></h1>
+      <h1>Harshaa <em>Nandakumar</em></h1>
       <p class="tagline">
-        Supply chain analytics. Business development.<br/>
-        Turning complex logistics data into clear, actionable strategy.
+        Supply chain analytics. Business development. Turning complex logistics data into clear, actionable strategy.
       </p>
       <div class="hero-cta">
         <a class="btn" href="#work">View Work →</a>
@@ -702,11 +706,11 @@
       <div class="section-label">01 · About</div>
       <div class="about-grid">
         <p class="about-lead">
-          I sit where commercial strategy meets operational data — six years inside global freight forwarding, building the dashboards and automations that turn noisy shipping data into decisions leadership can act on.
+          I sit where commercial strategy meets operational data — five years inside global freight forwarding, building the dashboards and automations that turn noisy shipping data into decisions leadership can act on.
         </p>
         <div class="about-body">
           <p>
-            Most recently at EUSU Logistics as Strategic Account & Analytics Manager, and four years before that at Expeditors in district sales and operations. My approach combines technical rigor — SQL-based transformations, Power BI data modeling, VBA workflows — with a commercial mindset shaped by years of owning client relationships and revenue targets.
+            Most recently at EUSU Logistics as Strategic Account &amp; Analytics Manager, and four years at Expeditors in district sales and operations. My approach combines technical rigor — SQL-based transformations, Power BI data modeling, VBA workflows — with a commercial mindset shaped by years of owning client relationships and revenue targets.
           </p>
           <p>
             Currently deepening the technical foundation with <strong>MIT's MicroMasters in Supply Chain Management</strong>, focused on the intersection of advanced analytics and global logistics strategy. Open to Supply Chain Analyst and BI Analyst roles.
@@ -716,7 +720,7 @@
 
       <div class="stats">
         <div class="stat">
-          <div class="num">6<sup style="font-size:0.55em; color: var(--amber-2);">yrs</sup></div>
+          <div class="num">5<sup style="font-size:0.55em; color: var(--amber-2);">yrs</sup></div>
           <div class="label">Inside global freight forwarding & business development</div>
         </div>
         <div class="stat">
@@ -914,25 +918,27 @@
     <section id="education" class="reveal">
       <div class="section-label">05 · Education &amp; Credentials</div>
       <div class="edu-grid">
-        <div>
-          <div class="edu-item">
-            <h4>Indian Institute of Management, Indore</h4>
-            <div class="program">Integrated Programme in Business Analytics (IPBA)</div>
-            <div class="year">2019 — 2020</div>
-          </div>
-          <div class="edu-item">
-            <h4>MIT Center for Transportation &amp; Logistics</h4>
-            <div class="program">MicroMasters, Supply Chain Management <em style="color:var(--amber-2); font-style:italic;">(in progress)</em></div>
-            <div class="year">Ongoing</div>
-          </div>
-          <div class="edu-item">
-            <h4>Anna Adarsh College for Women</h4>
-            <div class="program">Bachelor of Commerce — Corporate Secretaryship</div>
-            <div class="year">2015 — 2018</div>
-          </div>
+
+        <div class="edu-item">
+          <h4>Indian Institute of Management, Indore</h4>
+          <div class="program">Integrated Programme in Business Analytics (IPBA)</div>
+          <div class="year">2019 — 2020</div>
         </div>
-        <div>
-          <h4 style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-2); font-weight: 500; margin: 0 0 1rem 0;">Certifications &amp; Honours</h4>
+
+        <div class="edu-item">
+          <h4>MIT Center for Transportation &amp; Logistics</h4>
+          <div class="program">MicroMasters, Supply Chain Management <em style="color:var(--amber-2); font-style:italic;">(in progress)</em></div>
+          <div class="year">Ongoing</div>
+        </div>
+
+        <div class="edu-item">
+          <h4>Anna Adarsh College for Women</h4>
+          <div class="program">Bachelor of Commerce — Corporate Secretaryship</div>
+          <div class="year">2015 — 2018</div>
+        </div>
+
+        <div class="edu-item">
+          <h4>Certifications &amp; Honours</h4>
           <ul class="cert-list">
             <li>Intermediate SQL — Data Reporting &amp; Analysis</li>
             <li>From Excel to SQL</li>
@@ -940,11 +946,12 @@
             <li>Lean Six Sigma Foundations</li>
             <li>Project Management Foundations</li>
             <li>Salesforce CRM Analytics</li>
-            <li style="padding-top: 1rem; color: var(--amber-2);">Best KAM — Highest NRV Extraction</li>
+            <li style="padding-top: 0.6rem; color: var(--amber-2);">Best KAM — Highest NRV Extraction</li>
             <li style="color: var(--amber-2);">Sales Champion of the Hub</li>
             <li style="color: var(--amber-2);">Rising Star of the Month · Jul 2020</li>
           </ul>
         </div>
+
       </div>
     </section>
 
