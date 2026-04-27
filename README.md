@@ -29,7 +29,7 @@ Right now I'm deepening the technical foundation with **MIT's MicroMasters in Su
 
 - **Supply chain KPIs** — OTIF, on-time delivery, lane performance, revenue & GP, customer concentration
 - **Dashboard design** — Power BI (DAX, data modeling), Tableau, advanced Excel
-- **Automation** — VBA (quote generation, DSR pipelines), Power Query, SQL-based reporting
+- **Data & automation** — SQL (window functions, CTEs), Python (pandas, NetworkX), VBA, Power Query
 - **Domain** — ocean & air freight, Incoterms, account management, pricing, operational excellence
 
 ### Selected work
@@ -39,9 +39,8 @@ Right now I'm deepening the technical foundation with **MIT's MicroMasters in Su
 | [**freight-quote-automation**](https://github.com/HarshaaNandakumar/freight-quote-automation) | Multi-mode VBA quote generator — 7 freight modes, sequential quote IDs, audit log, one-click PDF export | VBA · Excel |
 | [**logistics-ops-excellence**](https://github.com/HarshaaNandakumar/logistics-ops-excellence) | Operational governance system: Daily Shipment Report, Account Management tracker, Team Huddle tracker | Excel · Power Query |
 | [**freight-pipeline-dashboards**](https://github.com/HarshaaNandakumar/freight-pipeline-dashboards) | Two Power BI dashboards — Revenue/GP and Sales Pipeline with lane + vertical drilldowns | Power BI · DAX |
-| [**otif-service-level-analysis**](https://github.com/HarshaaNandakumar/otif-service-level-analysis) | Service-level analysis on a public FMCG dataset — OTIF, OT%, IF% with root-cause breakdown | Python · SQL · Power BI |
-| [**freight-demand-forecasting**](https://github.com/HarshaaNandakumar/freight-demand-forecasting) | Time-series forecasting on shipping volumes (Prophet / statsmodels) | Python · Jupyter |
-| [**sql-logistics-reporting**](https://github.com/HarshaaNandakumar/sql-logistics-reporting) | SQL query pack for common supply-chain reporting scenarios | SQL · PostgreSQL |
+| [**Freight-Lane-Network-Analysis**](https://github.com/HarshaaNandakumar/Freight-Lane-Network-Analysis) | Network analysis of a freight branch's lane portfolio — graph theory, centrality, three-factor fragility scoring | Python · NetworkX · pandas |
+| [**sql-logistics-reporting**](https://github.com/HarshaaNandakumar/sql-logistics-reporting) | 10 SQL queries for supply chain reporting — joins to window functions to CTEs, with analyst commentary | SQL · SQLite · PostgreSQL |
 
 > The full portfolio with case studies and screenshots lives at **[harshaanandakumar.github.io](https://harshaanandakumar.github.io)**.
 
